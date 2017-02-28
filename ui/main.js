@@ -14,8 +14,9 @@ button.onclick = function() {
             ul.innerHTML=list;
         }
     };
+var nameInput = document.getElementById('name');
 var name = nameInput.value;
-var submit = document.getElementById('submit_btn');
+//var submit = document.getElementById('submit_btn');
 request.open('GET','http://rahuliet17.imad.hasura-app.io/submit-name?'+name,true);
 request.send(null);
 };
