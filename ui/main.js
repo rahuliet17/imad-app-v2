@@ -1,8 +1,9 @@
 var button = document.getElementById('counter');
 var counter = 0;
 button.onclick = function() {
-    //Make a request to the counter endpoint
+    //Create a request object
     var request = new XMLHttpRequest();
+    //Capture the response and store it in a variable
     request.onreadystatechange = function(){
         if(request.readyState===XMLHttpRequest.DONE)
         if(request.status===200){
@@ -13,11 +14,15 @@ button.onclick = function() {
             }
             var ul= document.getElementById('namelist');
             ul.innerHTML=list;
+            //Render the variable in the correct span 
             counter = counter + 1;
             var span = document.getElementById('count');
             span.innerHTML = counter.toString();
         }
     };
+    //Make the request 
+    request.open('GET','http://rahuliet17.imad.hasura-app.io/counter',true);
+    request.send(null);
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
 //var submit = document.getElementById('submit_btn');
