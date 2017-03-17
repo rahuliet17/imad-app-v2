@@ -1,6 +1,7 @@
 var button = document.getElementById('counter');
+var counter = 0;
 button.onclick = function() {
-    //Create the Request
+    //Make a request to the counter endpoint
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState===XMLHttpRequest.DONE)
@@ -12,6 +13,9 @@ button.onclick = function() {
             }
             var ul= document.getElementById('namelist');
             ul.innerHTML=list;
+            counter = counter + 1;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
         }
     };
 var nameInput = document.getElementById('name');
