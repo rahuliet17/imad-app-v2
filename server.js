@@ -8,7 +8,7 @@ var config = {
     database: 'rahuliet17',
     host: 'http://db.imad.hasura-app.io',
     port: '5432',
-    password: db-rahuliet17-16599
+    password: 'db-rahuliet17-16599'
 };
 
 var app = express();
